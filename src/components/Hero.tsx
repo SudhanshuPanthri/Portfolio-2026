@@ -128,6 +128,13 @@ export default function Hero() {
           >
             SEND A SIGNAL!
           </a>
+          <a
+            href="/Sudhanshu-Panthri-Resume.pdf"
+            download="Sudhanshu-Panthri-Resume.pdf"
+            className="font-bangers text-xl tracking-wider bg-comic-red text-white border-4 border-ink px-8 py-3 shadow-comic hover:-translate-y-1 hover:shadow-comic-lg active:translate-y-0.5 active:shadow-comic-sm transition-all"
+          >
+            📜 GRAB MY DOSSIER!
+          </a>
         </motion.div>
       </div>
 

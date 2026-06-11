@@ -28,7 +28,7 @@ export default function Contact() {
       <div className="relative mx-auto max-w-3xl">
         <SectionTitle>SEND THE SIGNAL!</SectionTitle>
 
-        <SpeechBubble className="mb-16 mx-auto max-w-lg text-center">
+        <SpeechBubble className="mb-10 mx-auto max-w-lg text-center">
           <p className="font-comic font-bold text-xl text-ink">
             Need a hero for your next project?
             <br />
@@ -36,6 +36,22 @@ export default function Contact() {
             and I&apos;ll be there!
           </p>
         </SpeechBubble>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.6 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ type: "spring", stiffness: 240, damping: 15 }}
+          className="text-center mb-16"
+        >
+          <a
+            href="/Sudhanshu-Panthri-Resume.pdf"
+            download="Sudhanshu-Panthri-Resume.pdf"
+            className="inline-block font-bangers text-xl tracking-wider bg-comic-purple text-white border-4 border-ink px-8 py-3 shadow-comic rotate-1 hover:-translate-y-1 hover:rotate-0 hover:shadow-comic-lg active:translate-y-0.5 active:shadow-comic-sm transition-all"
+          >
+            📜 DOWNLOAD THE HERO FILES (RESUME)
+          </a>
+        </motion.div>
 
         <motion.form
           initial={{ opacity: 0, y: 60 }}
