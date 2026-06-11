@@ -3,6 +3,7 @@ import { Bangers, Luckiest_Guy, Comic_Neue } from "next/font/google";
 import "./globals.css";
 import ClickFX from "@/components/ClickFX";
 import CursorFX from "@/components/CursorFX";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const bangers = Bangers({
   variable: "--font-bangers",
@@ -42,9 +43,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bangers.variable} ${luckiestGuy.variable} ${comicNeue.variable} h-full scroll-smooth antialiased`}
+      className={`${bangers.variable} ${luckiestGuy.variable} ${comicNeue.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-comic bg-paper text-ink overflow-x-hidden">
+        <SmoothScroll />
         {children}
         <ClickFX />
         <CursorFX />
