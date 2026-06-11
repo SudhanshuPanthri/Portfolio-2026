@@ -1,26 +1,206 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-paper: #fdf6e3;
+  --color-ink: #1a1a2e;
+  --color-comic-yellow: #ffd23f;
+  --color-comic-red: #ee4266;
+  --color-comic-blue: #3bceac;
+  --color-comic-cyan: #0ead69;
+  --color-comic-sky: #54c6eb;
+  --color-comic-purple: #a06cd5;
+  --color-comic-orange: #ff8c42;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --font-bangers: var(--font-bangers);
+  --font-luckiest: var(--font-luckiest);
+  --font-comic: var(--font-comic);
+
+  --shadow-comic: 6px 6px 0 0 var(--color-ink);
+  --shadow-comic-sm: 3px 3px 0 0 var(--color-ink);
+  --shadow-comic-lg: 10px 10px 0 0 var(--color-ink);
+
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-float-slow: float 6s ease-in-out infinite;
+  --animate-wobble: wobble 3s ease-in-out infinite;
+  --animate-spin-slow: spin 12s linear infinite;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-marquee: marquee 22s linear infinite;
+  --animate-bounce-arrow: bounce-arrow 1.2s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-3deg);
+    }
+    50% {
+      transform: translateY(-18px) rotate(3deg);
+    }
+  }
+
+  @keyframes wobble {
+    0%,
+    100% {
+      transform: rotate(-2deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes bounce-arrow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ===== Comic utilities ===== */
+
+.font-bangers {
+  font-family: var(--font-bangers), cursive;
+}
+
+.font-luckiest {
+  font-family: var(--font-luckiest), cursive;
+}
+
+.font-comic {
+  font-family: var(--font-comic), "Comic Sans MS", cursive;
+}
+
+/* Halftone dot pattern overlays */
+.halftone {
+  background-image: radial-gradient(
+    circle,
+    rgb(26 26 46 / 0.14) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 14px 14px;
+}
+
+.halftone-lg {
+  background-image: radial-gradient(
+    circle,
+    rgb(26 26 46 / 0.1) 3px,
+    transparent 3px
+  );
+  background-size: 26px 26px;
+}
+
+/* Comic text stroke (chunky outline) */
+.text-stroke {
+  -webkit-text-stroke: 2px var(--color-ink);
+  paint-order: stroke fill;
+  text-shadow: 4px 4px 0 var(--color-ink);
+}
+
+.text-stroke-thick {
+  -webkit-text-stroke: 3px var(--color-ink);
+  paint-order: stroke fill;
+  text-shadow: 6px 6px 0 var(--color-ink);
+}
+
+/* Speed lines radiating from center (manga style) */
+.speed-lines {
+  background: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg 4deg,
+    rgb(26 26 46 / 0.05) 4deg 5deg
+  );
+}
+
+/* Speech bubble tail */
+.bubble-tail::after {
+  content: "";
+  position: absolute;
+  bottom: -19px;
+  left: 12%;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 20px solid var(--color-ink);
+}
+
+.bubble-tail::before {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  left: calc(12% + 3px);
+  width: 0;
+  height: 0;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-top: 16px solid white;
+  z-index: 1;
+}
+
+/* Starburst clip shape for POW/BAM badges */
+.starburst {
+  clip-path: polygon(
+    50% 0%,
+    61% 13%,
+    77% 6%,
+    79% 23%,
+    96% 23%,
+    88% 38%,
+    100% 50%,
+    88% 62%,
+    96% 77%,
+    79% 77%,
+    77% 94%,
+    61% 87%,
+    50% 100%,
+    39% 87%,
+    23% 94%,
+    21% 77%,
+    4% 77%,
+    12% 62%,
+    0% 50%,
+    12% 38%,
+    4% 23%,
+    21% 23%,
+    23% 6%,
+    39% 13%
+  );
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--color-comic-yellow);
+  color: var(--color-ink);
 }
