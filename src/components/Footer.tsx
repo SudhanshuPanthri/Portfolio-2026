@@ -1,6 +1,10 @@
 const SOCIALS = [
-  { href: "https://github.com/", label: "GitHub", icon: "⌨" },
-  { href: "https://www.linkedin.com/", label: "LinkedIn", icon: "💼" },
+  { href: "https://github.com/SudhanshuPanthri", label: "GitHub", icon: "⌨" },
+  {
+    href: "https://www.linkedin.com/in/sudhanshu-p-43797ab1/",
+    label: "LinkedIn",
+    icon: "💼",
+  },
   { href: "mailto:panthrisudhanshu666@gmail.com", label: "Email", icon: "✉" },
   { href: "tel:+917042248925", label: "Phone", icon: "📞" },
 ];
@@ -21,6 +25,9 @@ export default function Footer() {
               key={social.label}
               href={social.href}
               aria-label={social.label}
+              {...(social.href.startsWith("http")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
               className="w-12 h-12 flex items-center justify-center text-xl bg-paper text-ink border-2 border-paper rounded-full hover:bg-comic-yellow hover:-translate-y-1 hover:rotate-6 transition-all"
             >
               {social.icon}
