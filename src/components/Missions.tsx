@@ -10,7 +10,7 @@ export default function Missions() {
     <section id="missions" className="relative py-24 px-4 scroll-mt-20">
       <SectionTitle color="bg-comic-red">EPIC MISSIONS</SectionTitle>
 
-      <div className="mx-auto max-w-6xl grid gap-10 md:grid-cols-3">
+      <div className="mx-auto max-w-5xl grid gap-10 md:grid-cols-2">
         {MISSIONS.map((mission, i) => (
           <motion.article
             key={mission.slug}

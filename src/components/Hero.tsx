@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Burst from "./Burst";
 
-const TAGLINE = "Full stack .NET developer — I forge rock-solid C# APIs with SUPERHUMAN speed!";
+const TAGLINE = "Full stack .NET developer — forging C# APIs, GraphQL, and Blazor apps that keep healthcare heroes moving!";
 
 function Typewriter({ text, startDelay = 0 }: { text: string; startDelay?: number }) {
   const [count, setCount] = useState(0);

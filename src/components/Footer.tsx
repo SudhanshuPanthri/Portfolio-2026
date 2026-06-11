@@ -2,6 +2,7 @@ const SOCIALS = [
   { href: "https://github.com/", label: "GitHub", icon: "⌨" },
   { href: "https://www.linkedin.com/", label: "LinkedIn", icon: "💼" },
   { href: "mailto:panthrisudhanshu666@gmail.com", label: "Email", icon: "✉" },
+  { href: "tel:+917042248925", label: "Phone", icon: "📞" },
 ];
 
 export default function Footer() {

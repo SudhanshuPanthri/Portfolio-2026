@@ -5,12 +5,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 
 const POWERS = [
-  { icon: "🟣", name: "C# / .NET", level: 92, sfx: "ZAP!" },
-  { icon: "🌐", name: "ASP.NET Core Web APIs", level: 90, sfx: "BOOM!" },
-  { icon: "🗄️", name: "SQL Server / EF Core", level: 85, sfx: "WHAM!" },
-  { icon: "🏗️", name: "Microservices & Clean Architecture", level: 80, sfx: "POW!" },
-  { icon: "☁️", name: "Azure / CI-CD", level: 75, sfx: "BANG!" },
-  { icon: "⚛️", name: "JavaScript / React", level: 70, sfx: "CRASH!" },
+  { icon: "🟣", name: "C# / .NET 8+", level: 92, sfx: "ZAP!" },
+  { icon: "🌐", name: "RESTful APIs / MVC", level: 90, sfx: "BOOM!" },
+  { icon: "🗄️", name: "SQL Server / EF Core / LINQ", level: 88, sfx: "WHAM!" },
+  { icon: "🍫", name: "GraphQL (HotChocolate)", level: 85, sfx: "POW!" },
+  { icon: "🔥", name: "Blazor", level: 85, sfx: "BANG!" },
+  { icon: "☁️", name: "Azure / Azure DevOps CI-CD", level: 78, sfx: "CRASH!" },
+  { icon: "⚡", name: "Next.js / JavaScript / Tailwind", level: 75, sfx: "KAPOW!" },
+  { icon: "🧪", name: "Unit Testing (xUnit / NUnit)", level: 80, sfx: "SNAP!" },
+  { icon: "🏗️", name: "Clean Architecture", level: 85, sfx: "SLAM!" },
 ];
 
 function PowerCard({

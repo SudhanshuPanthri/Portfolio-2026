@@ -7,22 +7,23 @@ import SpeechBubble from "./SpeechBubble";
 const PANELS = [
   {
     caption: "PANEL 1",
-    art: "👶💻",
+    art: "🎓⚡",
     text: (
       <>
-        Once an ordinary kid... until a radioactive <strong>keyboard</strong>{" "}
-        changed everything!
+        Trained at the academy — <strong>BCA (9.0 CGPA)</strong>, then{" "}
+        <strong>MCA (8.8 CGPA)</strong>. The origin powers were forged!
       </>
     ),
     tilt: -2,
   },
   {
     caption: "PANEL 2",
-    art: "⚡🧠",
+    art: "🧪💻",
     text: (
       <>
-        Gained the power to turn <strong>caffeine</strong> into{" "}
-        <strong>C#</strong> at superhuman speed!
+        Joined <strong>Symbiotic Consulting Group</strong> as an intern —
+        mastering <strong>C#, .NET &amp; EF Core</strong> on real healthcare
+        systems!
       </>
     ),
     tilt: 2,
@@ -32,11 +33,33 @@ const PANELS = [
     art: "🦸‍♂️🚀",
     text: (
       <>
-        Now defends production with <strong>bulletproof APIs</strong> — no
-        500 error survives his watch!
+        Now a <strong>Software Developer</strong> leading backend missions —
+        REST APIs, <strong>GraphQL</strong>, and offline-first{" "}
+        <strong>Blazor</strong> for VITAS Healthcare!
       </>
     ),
     tilt: -1.5,
+  },
+];
+
+const TRAINING = [
+  {
+    icon: "🎓",
+    title: "MCA",
+    place: "Vivekananda Institute of Professional Studies",
+    detail: "2022–2024 · 8.8 CGPA",
+  },
+  {
+    icon: "🎓",
+    title: "BCA",
+    place: "Jagannath International Management School",
+    detail: "2019–2022 · 9.0 CGPA",
+  },
+  {
+    icon: "🏅",
+    title: "AZ-900",
+    place: "Microsoft Azure Fundamentals",
+    detail: "Certified",
   },
 ];
 
@@ -67,6 +90,47 @@ export default function Origin() {
             <p className="font-comic font-bold text-lg text-ink">{panel.text}</p>
           </motion.article>
         ))}
+      </div>
+
+      {/* Hero training & credentials */}
+      <div className="mx-auto max-w-4xl mt-20">
+        <motion.p
+          initial={{ opacity: 0, scale: 1.6, rotate: 4 }}
+          whileInView={{ opacity: 1, scale: 1, rotate: -1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ type: "spring", stiffness: 260, damping: 16 }}
+          className="text-center mb-10"
+        >
+          <span className="inline-block bg-comic-purple text-white border-4 border-ink shadow-comic px-6 py-2 font-bangers text-3xl tracking-wider">
+            HERO TRAINING
+          </span>
+        </motion.p>
+        <div className="grid gap-6 sm:grid-cols-3">
+          {TRAINING.map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 50, rotate: i % 2 ? 3 : -3 }}
+              whileInView={{ opacity: 1, y: 0, rotate: i % 2 ? 1 : -1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ type: "spring", stiffness: 200, damping: 16, delay: i * 0.12 }}
+              whileHover={{ rotate: 0, scale: 1.05 }}
+              className="bg-white border-4 border-ink shadow-comic p-5 text-center"
+            >
+              <span className="text-4xl block mb-2" role="img" aria-hidden="true">
+                {item.icon}
+              </span>
+              <p className="font-bangers text-3xl tracking-wide text-comic-red">
+                {item.title}
+              </p>
+              <p className="font-comic font-bold text-ink leading-snug mt-1">
+                {item.place}
+              </p>
+              <p className="font-bangers tracking-widest text-sm text-ink/60 mt-2">
+                {item.detail}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       <div className="mx-auto max-w-md mt-16">
