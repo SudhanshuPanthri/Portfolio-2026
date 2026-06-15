@@ -230,6 +230,60 @@ export const MISSIONS: Mission[] = [
     solution:
       "Leading the upgrade to .NET 10 and HotChocolate 16 with performance as a first-class goal: 40% faster query execution and a schema structure built for long-term maintainability.",
   },
+  {
+    slug: "wealthlens",
+    issue: "#5",
+    emoji: "📊",
+    cover: "bg-comic-blue",
+    title: "WealthLens",
+    subtitle: "Portfolio analytics for Indian investors",
+    blurb:
+      "Built a portfolio analytics platform that sees what broker apps can't — multi-broker imports, live NSE/BSE pricing, AI insights, and capital-gains tax intelligence!",
+    villain: {
+      name: "THE FOG",
+      emoji: "🌫️",
+      crime: "Hiding investors' real returns and tax liabilities behind broker-app blind spots!",
+    },
+    story: [
+      "Indian investors juggle holdings across Zerodha, Groww, and spreadsheets — and every broker app shows only its own slice. The Fog kept the full picture, the real returns, and the looming tax bill out of sight.",
+      "WealthLens cut through it: a Next.js 16 platform that imports holdings from any broker with format auto-detection, then pulls live NSE/BSE quotes and mutual-fund NAVs to show one unified, real-time portfolio with P&L and sector allocation.",
+      "Then it goes where broker apps won't — FIFO transaction history with XIRR, STCG/LTCG splits, ₹1.25L LTCG allowance tracking, tax-loss-harvesting suggestions, and an AI insights engine that escalates from rule-based analysis to Claude. The Fog never stood a chance.",
+    ],
+    features: [
+      {
+        icon: "📥",
+        title: "Multi-Broker Import",
+        text: "Auto-detects Zerodha, Groww, and generic CSV formats to unify holdings from anywhere.",
+      },
+      {
+        icon: "📈",
+        title: "Live Market Data",
+        text: "Real-time NSE/BSE quotes and mutual-fund NAVs power a dashboard with P&L and sector allocation.",
+      },
+      {
+        icon: "🧮",
+        title: "Tax Intelligence",
+        text: "STCG/LTCG splits, ₹1.25L LTCG allowance tracking, tax-loss harvesting, and holding-period countdowns.",
+      },
+      {
+        icon: "🤖",
+        title: "AI Insights Ladder",
+        text: "A provider ladder from a rule-based engine up to Gemini, OpenRouter, and Claude for portfolio reviews.",
+      },
+    ],
+    tags: ["Next.js 16", "React 19", "TypeScript", "Prisma", "Tailwind CSS", "yahoo-finance2", "Claude"],
+    stats: [
+      { label: "BROKERS", value: "MULTI" },
+      { label: "PRICING", value: "LIVE" },
+      { label: "TAX", value: "STCG/LTCG" },
+      { label: "AI", value: "CLAUDE" },
+    ],
+    challenge:
+      "Indian investors had holdings scattered across brokers and spreadsheets, with no single view of real returns — and broker apps offered nothing for XIRR, FIFO cost basis, or capital-gains tax planning.",
+    solution:
+      "Built a Next.js 16 platform that imports from any broker, prices holdings live off NSE/BSE and mfapi.in, and layers on FIFO/XIRR analytics, capital-gains tax intelligence, and an AI insights engine backed by Claude.",
+    repoUrl: "https://github.com/SudhanshuPanthri/WealthLens",
+  },
 ];
 
 export function getMission(slug: string): Mission | undefined {
